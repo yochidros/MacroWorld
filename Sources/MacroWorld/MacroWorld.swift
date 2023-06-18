@@ -35,3 +35,11 @@ public protocol AnimalProtocol {
     func say()
     func sayAgain()
 }
+// Only literals and macro parameters are permitted in expansion
+//import MacroWorldMacros
+//extension String {
+//    static let macroName = "MacroWorldMacros"
+//}
+
+@attached(accessor)
+public macro wooAccessor() = #externalMacro(module: "MacroWorldMacros", type: "AccessorChronoMacro")

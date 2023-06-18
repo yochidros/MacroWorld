@@ -47,8 +47,20 @@ struct FreeDeclSample {
     }
 }
 
+// precheck calc
+
 async let dog: () = FreeDeclSample.run(animal: FreeDeclSample.Dog(name: "🐶"))
 async let cat: () = FreeDeclSample.run(animal: FreeDeclSample.Cat(name: "🐈"))
 async let snake: () = FreeDeclSample.run(animal: FreeDeclSample.Snake🐍(name: "🐍"))
 
 try await (_, _, _) = (dog, cat, snake)
+
+struct AttachedSample {
+    private var _name: String = ""
+    @wooAccessor
+    var name: String
+}
+
+var accessor = AttachedSample()
+accessor.name = "newDog"
+print(accessor.name)

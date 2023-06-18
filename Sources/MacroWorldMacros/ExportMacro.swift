@@ -11,5 +11,6 @@ struct MacroWorldPlugin: CompilerPlugin {
         ValidatedURLMacro.self,
         AnimalMacro.self,
         WarningMacro.self,
+        AccessorChronoMacro.self,
     ]
 }
